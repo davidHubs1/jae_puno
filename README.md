@@ -11,7 +11,7 @@
 
   <!-- <h1 align="center">INSTITUTO DE EDUCACION SUPERIOR TECNOLÓGICO PUBLICO - JOSE ANTONIO ENCINAS - PUNO</h1> -->
 
-[IESTP-JAE](https://www.iestpjae.edu.pe/)
+<!-- [IESTP-JAE](https://www.iestpjae.edu.pe/) -->
 
 A new Flutter project.
 
