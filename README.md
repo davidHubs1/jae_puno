@@ -8,7 +8,7 @@
 
 
 
-- Este Aplicativo esta diseñado para un centro de Educación Superior
+- “Somos una institución que forma profesionales técnicos con valores y principios en la producción y servicios, desarrollando una cultura ambiental sostenible en la región y el país”.
 
 ## Getting Started
 
