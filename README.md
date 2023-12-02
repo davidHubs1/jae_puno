@@ -5,7 +5,7 @@
   <img src="assets/img/jae2.png" alt="Texto alternativo">
 </p>
 
-  <h1 align="center">INSTITUTO DE EDUCACION SUPERIOR TECNOLÓGICO PUBLICO - JOSE ANTONIO ENCINAS - PUNO</h1>
+  <h1 align="center">INSTITUTO DE EDUCACION SUPERIOR TECNOLÓGICO PUBLICO - JOSE ANTONIO ENCINAS - PUNO</h1>(https://www.iestpjae.edu.pe/)
 
 [IESTP-JAE](https://www.iestpjae.edu.pe/)
 
