@@ -1,12 +1,13 @@
 <!-- ## INSTITUTO DE EDUCACION SUPERIOR TECNOLÓGICO PUBLICO - JOSE ANTONIO ENCINAS - PUNO
   -->
-  ![Texto alternativo](assets/img//jae2.png)
+  <!-- ![Texto alternativo](assets/img//jae2.png) -->
+  <p align="center">
+  <img src="assets/img/jae2.png" alt="Texto alternativo">
+</p>
 
   <h1 align="center">INSTITUTO DE EDUCACION SUPERIOR TECNOLÓGICO PUBLICO - JOSE ANTONIO ENCINAS - PUNO</h1>
 
-
 [IESTP-JAE](https://www.iestpjae.edu.pe/)
-
 
 A new Flutter project.
 
