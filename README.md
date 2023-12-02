@@ -4,7 +4,9 @@
 |                                |
 |--------------------------------|
 |<p align="center"><img src="assets/img/jae2.png" alt="Texto alternativo"></p>|
-|<h2 align="center" style="color:#FFFFFF;"><a href="https://www.iestpjae.edu.pe/" style="color:#FFFFFF;">INSTITUTO DE EDUCACION SUPERIOR TECNOLÓGICO PUBLICO - JOSE ANTONIO ENCINAS - PUNO</a></h2>|
+|--------------------------------|
+|<h2 align="center"><a href="https://www.iestpjae.edu.pe/" style="color:#FFFFFF;">INSTITUTO DE EDUCACION SUPERIOR TECNOLÓGICO PUBLICO - JOSE ANTONIO ENCINAS - PUNO</a></h2>|
+
 
 
 <!-- ## [<h2 align="center" style="color:#FFFFFF;">INSTITUTO DE EDUCACION SUPERIOR TECNOLÓGICO PUBLICO - JOSE ANTONIO ENCINAS - PUNO</h2>](https://www.iestpjae.edu.pe/) -->
