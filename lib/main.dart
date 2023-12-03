@@ -1,6 +1,6 @@
-import 'dart:convert';
+import 'data/infrastructure/data_jae.dart';
+
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 
 void main() {
   runApp(const MyApp());
@@ -24,19 +24,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Future<List<dynamic>> fetchData() async {
-    //  solicitud GET a la URL
-    http.Response response = await http
-        .get(Uri.parse('https://eventosacademicosjae.org/g3r41d/post.php'));
-
-    if (response.statusCode == 200) {
-      List<dynamic> jsonData = jsonDecode(response.body);
-      return jsonData;
-    } else {
-      throw Exception('Error en la solicitud: ${response.statusCode}');
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
