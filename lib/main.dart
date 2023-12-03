@@ -7,12 +7,12 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Jae API',
+      title: 'API Data',
       home: MyHomePage(),
     );
   }
@@ -25,8 +25,9 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   Future<List<dynamic>> fetchData() async {
-    var url = Uri.https('eventosacademicosjae.org', '/g3r41d/post.php');
-    http.Response response = await http.get(url);
+    // Realiza la solicitud GET a la URL proporcionada
+    http.Response response = await http
+        .get(Uri.parse('https://eventosacademicosjae.org/g3r41d/post.php'));
 
     if (response.statusCode == 200) {
       List<dynamic> jsonData = jsonDecode(response.body);
@@ -54,23 +55,35 @@ class _MyHomePageState extends State<MyHomePage> {
             return ListView.builder(
               itemCount: data.length,
               itemBuilder: (context, index) {
-                String logoFileName = data[index]['logo'];
+                String imageName = data[index]['logo'];
                 String imageUrl =
-                    'https://eventosacademicosjae.org/jae-flutter/manager/programas/$logoFileName';
+                    'https://eventosacademicosjae.org/g3r41d/$imageName';
 
                 return Column(
                   children: [
                     ListTile(
-                      // title: Text('ID: ${data[index]['ID']}'),
-                      title: Text('${data[index]['nombre']}'),
-                      subtitle: Text('${data[index]['corto']}'),
-                      leading: Image.network(
-                        imageUrl,
-                        width: 50,
-                        height: 50,
-                        fit: BoxFit.cover,
+                      title: Text('ID: ${data[index]['ID']}'),
+                      subtitle: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Nombre: ${data[index]['nombre']}'),
+                          Text('Corto: ${data[index]['corto']}'),
+                          Text('Estado: ${data[index]['estado']}'),
+                        ],
                       ),
+                      leading: imageUrl != null
+                          ? CircularProgressIndicator(
+                              strokeWidth: 2,
+                              backgroundColor: Colors.grey,
+                            )
+                          : Image.network(
+                              imageUrl,
+                              width: 50,
+                              height: 50,
+                              fit: BoxFit.cover,
+                            ),
                     ),
+                    Divider(), // Agrega un separador entre cada ListTile
                   ],
                 );
               },
