@@ -25,7 +25,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   Future<List<dynamic>> fetchData() async {
-    // Realiza la solicitud GET a la URL proporcionada
+    //  solicitud GET a la URL
     http.Response response = await http
         .get(Uri.parse('https://eventosacademicosjae.org/g3r41d/post.php'));
 
@@ -83,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               fit: BoxFit.cover,
                             ),
                     ),
-                    Divider(), // Agrega un separador entre cada ListTile
+                    Divider(),
                   ],
                 );
               },
