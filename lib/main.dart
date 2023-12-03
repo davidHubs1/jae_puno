@@ -1,6 +1,5 @@
-import 'data/infrastructure/data_jae.dart';
-
 import 'package:flutter/material.dart';
+import 'package:jae_puno/data/infrastructure/data_jae.dart';
 
 void main() {
   runApp(const MyApp());
@@ -46,31 +45,39 @@ class _MyHomePageState extends State<MyHomePage> {
                 String imageUrl =
                     'https://eventosacademicosjae.org/g3r41d/$imageName';
 
-                return Column(
+                return Row(
                   children: [
-                    ListTile(
-                      title: Text('ID: ${data[index]['ID']}'),
-                      subtitle: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text('Nombre: ${data[index]['nombre']}'),
-                          Text('Corto: ${data[index]['corto']}'),
-                          Text('Estado: ${data[index]['estado']}'),
-                        ],
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: SizedBox(
+                        width: 35,
+                        child: imageUrl != null
+                            ? CircularProgressIndicator(
+                                strokeWidth: 1.5,
+                                backgroundColor: Colors.grey[400],
+                              )
+                            : Image.network(
+                                imageUrl,
+                                width: 50,
+                                height: 50,
+                                fit: BoxFit.contain,
+                              ),
                       ),
-                      leading: imageUrl != null
-                          ? CircularProgressIndicator(
-                              strokeWidth: 2,
-                              backgroundColor: Colors.grey,
-                            )
-                          : Image.network(
-                              imageUrl,
-                              width: 50,
-                              height: 50,
-                              fit: BoxFit.cover,
-                            ),
                     ),
-                    Divider(),
+                    const SizedBox(width: 20),
+                    Container(
+                      width: 1,
+                      color: Colors.grey,
+                      height: 35,
+                    ),
+                    const SizedBox(width: 20),
+                    Expanded(
+                      child: ListTile(
+                        title: Text(data[index]['nombre']),
+                        subtitle: Text(data[index]['corto']),
+                        contentPadding: EdgeInsets.zero,
+                      ),
+                    ),
                   ],
                 );
               },
