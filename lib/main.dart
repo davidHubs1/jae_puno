@@ -1,90 +1,58 @@
-import 'package:flutter/material.dart';
-import 'package:jae_puno/data/infrastructure/data_jae.dart';
+import 'dart:io';
 
-void main() {
-  runApp(const MyApp());
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:jae_puno/app_theme.dart';
+import 'package:jae_puno/fitness_app/app_home_screen.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations(<DeviceOrientation>[
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown
+  ]).then((_) => runApp(const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors
+          .transparent, // la parte donde se encuentra la hora y esas cosas
+      statusBarIconBrightness: Brightness.dark,
+      statusBarBrightness:
+          !kIsWeb && Platform.isAndroid ? Brightness.dark : Brightness.light,
+      systemNavigationBarColor: Colors
+          .transparent, // lo que estabamos buscando definir el color de los bottons del cell por defecto
+      systemNavigationBarDividerColor: Colors
+          .transparent, // lo que divide de la pantalla y de los botones software del cel
+      systemNavigationBarIconBrightness: Brightness.dark,
+    ));
     return MaterialApp(
-      title: 'API Data',
-      home: MyHomePage(),
+      debugShowCheckedModeBanner: false,
+      title: 'Jae App',
+      theme: ThemeData(
+        // useMaterial3: true,
+        primarySwatch: Colors.blue,
+        textTheme: AppTheme.textTheme,
+        platform: TargetPlatform.iOS,
+      ),
+      home: FitnessAppHomeScreen(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
+class HexColor extends Color {
+  HexColor(final String hexColor) : super(_getColorFromHex(hexColor));
 
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('API Data'),
-      ),
-      body: FutureBuilder<List<dynamic>>(
-        future: fetchData(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
-          } else if (snapshot.hasError) {
-            return Center(child: Text('Error: ${snapshot.error}'));
-          } else {
-            List<dynamic> data = snapshot.data ?? [];
-            return ListView.builder(
-              itemCount: data.length,
-              itemBuilder: (context, index) {
-                String imageName = data[index]['logo'];
-                String imageUrl =
-                    'https://eventosacademicosjae.org/jae-flutter/logo/$imageName';
-
-                return Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: SizedBox(
-                        width: 35,
-                        child: imageUrl == null
-                            ? CircularProgressIndicator(
-                                strokeWidth: 1.5,
-                                backgroundColor: Colors.grey[400],
-                              )
-                            : Image.network(
-                                imageUrl,
-                                width: 50,
-                                height: 50,
-                                fit: BoxFit.contain,
-                              ),
-                      ),
-                    ),
-                    const SizedBox(width: 20),
-                    Container(
-                      width: 1,
-                      color: Colors.grey,
-                      height: 35,
-                    ),
-                    const SizedBox(width: 20),
-                    Expanded(
-                      child: ListTile(
-                        title: Text(data[index]['nombre']),
-                        subtitle: Text(data[index]['corto']),
-                        contentPadding: EdgeInsets.zero,
-                      ),
-                    ),
-                  ],
-                );
-              },
-            );
-          }
-        },
-      ),
-    );
+  static int _getColorFromHex(String hexColor) {
+    hexColor = hexColor.toUpperCase().replaceAll('#', '');
+    if (hexColor.length == 6) {
+      hexColor = 'FF$hexColor';
+    }
+    return int.parse(hexColor, radix: 16);
   }
 }
