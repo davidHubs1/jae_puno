@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
               itemBuilder: (context, index) {
                 String imageName = data[index]['logo'];
                 String imageUrl =
-                    'https://eventosacademicosjae.org/g3r41d/$imageName';
+                    'https://eventosacademicosjae.org/jae-flutter/logo/$imageName';
 
                 return Row(
                   children: [
@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       padding: const EdgeInsets.all(8.0),
                       child: SizedBox(
                         width: 35,
-                        child: imageUrl != null
+                        child: imageUrl == null
                             ? CircularProgressIndicator(
                                 strokeWidth: 1.5,
                                 backgroundColor: Colors.grey[400],
