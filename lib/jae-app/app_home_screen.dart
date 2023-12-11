@@ -3,7 +3,7 @@ import 'package:jae_puno/jae-app/models/tabIcon_data.dart';
 import 'package:jae_puno/jae-app/training/training_screen.dart';
 import 'bottom_navigation_view/bottom_bar_view.dart';
 import 'app_theme.dart';
-import 'my_diary/my_app_screen.dart';
+import 'app/my_app_screen.dart';
 
 class FitnessAppHomeScreen extends StatefulWidget {
   @override

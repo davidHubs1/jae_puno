@@ -208,7 +208,7 @@ class _TrainingScreenState extends State<TrainingScreen>
                                     ),
                                   ),
                                   Text(
-                                    '06 Nov',
+                                    '11 Dic',
                                     textAlign: TextAlign.left,
                                     style: TextStyle(
                                       fontFamily: FitnessAppTheme.fontName,

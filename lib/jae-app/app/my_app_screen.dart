@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jae_puno/jae-app/app_theme.dart';
-import 'package:jae_puno/jae-app/my_diary/slider_carrera.dart';
+import 'package:jae_puno/jae-app/app/slider_carrera.dart';
 import 'package:jae_puno/jae-app/ui_view/body_measurement.dart';
 import 'package:jae_puno/jae-app/ui_view/mediterranean_diet_view.dart';
 import 'package:jae_puno/jae-app/ui_view/title_view.dart';
