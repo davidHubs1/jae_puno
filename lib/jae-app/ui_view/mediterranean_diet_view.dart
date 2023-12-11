@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:jae_puno/fitness_app/app_theme.dart';
-import 'package:jae_puno/fitness_app/models/vision_mision.dart';
+import 'package:jae_puno/jae-app/app_theme.dart';
+import 'package:jae_puno/jae-app/models/vision_mision.dart';
 import 'package:jae_puno/main.dart';
 
 class MediterranesnDietView extends StatelessWidget {

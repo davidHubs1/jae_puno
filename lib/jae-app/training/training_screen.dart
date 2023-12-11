@@ -1,6 +1,6 @@
 // import 'package:fitnesapp/fitness_app/ui_view/workout_view.dart';
 import 'package:flutter/material.dart';
-import 'package:jae_puno/fitness_app/ui_view/title_view.dart';
+import 'package:jae_puno/jae-app/ui_view/title_view.dart';
 
 import '../app_theme.dart';
 

@@ -1,10 +1,9 @@
-
 import 'package:flutter/material.dart';
-import 'package:jae_puno/fitness_app/app_theme.dart';
-import 'package:jae_puno/fitness_app/my_diary/career_list_view.dart';
-import 'package:jae_puno/fitness_app/ui_view/body_measurement.dart';
-import 'package:jae_puno/fitness_app/ui_view/mediterranean_diet_view.dart';
-import 'package:jae_puno/fitness_app/ui_view/title_view.dart';
+import 'package:jae_puno/jae-app/app_theme.dart';
+import 'package:jae_puno/jae-app/my_diary/slider_carrera.dart';
+import 'package:jae_puno/jae-app/ui_view/body_measurement.dart';
+import 'package:jae_puno/jae-app/ui_view/mediterranean_diet_view.dart';
+import 'package:jae_puno/jae-app/ui_view/title_view.dart';
 
 class MyDiaryScreen extends StatefulWidget {
   const MyDiaryScreen({Key? key, this.animationController}) : super(key: key);
@@ -64,8 +63,8 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
         // subTxt: 'Más',
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController!,
-            curve:
-                const Interval((1 / count) * 0, 1.0, curve: Curves.fastOutSlowIn))),
+            curve: const Interval((1 / count) * 0, 1.0,
+                curve: Curves.fastOutSlowIn))),
         animationController: widget.animationController!,
       ),
     );
@@ -73,8 +72,8 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
       MediterranesnDietView(
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController!,
-            curve:
-                const Interval((1 / count) * 1, 1.0, curve: Curves.fastOutSlowIn))),
+            curve: const Interval((1 / count) * 1, 1.0,
+                curve: Curves.fastOutSlowIn))),
         animationController: widget.animationController!,
       ),
     );
@@ -84,8 +83,8 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
         // subTxt: 'Más',
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController!,
-            curve:
-                const Interval((1 / count) * 2, 1.0, curve: Curves.fastOutSlowIn))),
+            curve: const Interval((1 / count) * 2, 1.0,
+                curve: Curves.fastOutSlowIn))),
         animationController: widget.animationController!,
       ),
     );
@@ -107,8 +106,8 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
         // subTxt: 'Today',
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController!,
-            curve:
-                const Interval((1 / count) * 4, 1.0, curve: Curves.fastOutSlowIn))),
+            curve: const Interval((1 / count) * 4, 1.0,
+                curve: Curves.fastOutSlowIn))),
         animationController: widget.animationController!,
       ),
     );
@@ -117,12 +116,11 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
       BodyMeasurementView(
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController!,
-            curve:
-                const Interval((1 / count) * 5, 1.0, curve: Curves.fastOutSlowIn))),
+            curve: const Interval((1 / count) * 5, 1.0,
+                curve: Curves.fastOutSlowIn))),
         animationController: widget.animationController!,
       ),
     );
-    
   }
 
   /// TODO : el fondo
@@ -150,8 +148,9 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
       ),
     );
   }
+
   ///TODO : los espaciados de booton y top
-  
+
   Widget getMainListViewUI() {
     return FutureBuilder<bool>(
       future: getData(),
@@ -179,9 +178,8 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
     );
   }
 
-
   /// TODO : App bar por asi decirlo
-  
+
   Widget getAppBarUI() {
     return Column(
       children: <Widget>[
@@ -230,7 +228,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
                                   style: TextStyle(
                                     fontFamily: FitnessAppTheme.fontName,
                                     fontWeight: FontWeight.w700,
-                                    fontSize: 22 + 6  * topBarOpacity,
+                                    fontSize: 22 + 6 * topBarOpacity,
                                     letterSpacing: 1.2,
                                     color: FitnessAppTheme.darkerText,
                                   ),
@@ -242,8 +240,8 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
                               width: 38,
                               child: InkWell(
                                 highlightColor: Colors.transparent,
-                                borderRadius: BorderRadius.all(
-                                    Radius.circular(32.0)),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(32.0)),
                                 onTap: null,
                                 child: Center(
                                   child: Icon(
@@ -269,7 +267,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
                                     ),
                                   ),
                                   Text(
-                                    '06 Nov',
+                                    '11 Dic',
                                     textAlign: TextAlign.left,
                                     style: TextStyle(
                                       fontFamily: FitnessAppTheme.fontName,
@@ -287,8 +285,8 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
                               width: 38,
                               child: InkWell(
                                 highlightColor: Colors.transparent,
-                                borderRadius: BorderRadius.all(
-                                    Radius.circular(32.0)),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(32.0)),
                                 onTap: null,
                                 child: Center(
                                   child: Icon(

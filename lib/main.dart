@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:jae_puno/app_theme.dart';
-import 'package:jae_puno/fitness_app/app_home_screen.dart';
+import 'package:jae_puno/jae-app/app_home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

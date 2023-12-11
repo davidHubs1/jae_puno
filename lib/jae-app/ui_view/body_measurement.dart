@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:jae_puno/fitness_app/app_theme.dart';
-import 'package:jae_puno/fitness_app/models/carreras.dart';
+import 'package:jae_puno/jae-app/app_theme.dart';
+import 'package:jae_puno/jae-app/models/carreras.dart';
 
 void dialogActionButton(BuildContext context, bool isSelected) {
   final carreras = Carreras.tabIconsList[0];
