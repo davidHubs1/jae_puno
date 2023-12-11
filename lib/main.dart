@@ -20,22 +20,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Colors
-          .transparent, // la parte donde se encuentra la hora y esas cosas
+      statusBarColor: Colors.transparent,
       statusBarIconBrightness: Brightness.dark,
       statusBarBrightness:
           !kIsWeb && Platform.isAndroid ? Brightness.dark : Brightness.light,
-      systemNavigationBarColor: Colors
-          .transparent, // lo que estabamos buscando definir el color de los bottons del cell por defecto
-      systemNavigationBarDividerColor: Colors
-          .transparent, // lo que divide de la pantalla y de los botones software del cel
+      systemNavigationBarColor: Colors.transparent,
+      systemNavigationBarDividerColor: Colors.transparent,
       systemNavigationBarIconBrightness: Brightness.dark,
     ));
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Jae App',
       theme: ThemeData(
-        // useMaterial3: true,
         primarySwatch: Colors.blue,
         textTheme: AppTheme.textTheme,
         platform: TargetPlatform.iOS,
