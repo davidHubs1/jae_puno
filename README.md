@@ -3,7 +3,7 @@
 
 |                                |
 |--------------------------------|
-|<p align="center"><img src="assets/img/jae2.png" alt="Texto alternativo"></p>|
+|<p align="center"><img src="assets/img/jae.png" alt="logo jae"></p>|
 |<h2 align="center"><a href="https://www.iestpjae.edu.pe/" style="color:#FFFFFF;">INSTITUTO DE EDUCACION SUPERIOR TECNOLÓGICO PUBLICO - JOSE ANTONIO ENCINAS - PUNO</a></h2>|
 
 
